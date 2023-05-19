@@ -2,18 +2,19 @@
 int event;
 void callback()
 {
-if(scanf_s("%d/n")){
 
 	printf("interrupt");
 }
-}
 
-void handler(void(*fp)()){
+void system(void(*fp)()){
+scanf("%d",&event);
+if(event == 1){
 	fp();
+ }
 }
 
 
 int main()
 {
-	handler(callback);
+	system(callback);
 }
